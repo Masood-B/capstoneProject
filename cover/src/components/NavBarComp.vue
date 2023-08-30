@@ -1,8 +1,8 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg navcolor">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="https://i.postimg.cc/y8NqKNwm/logo.jpg" alt="Logo"></a>
+    <a class="navbar-brand" href="#"><img src="https://i.postimg.cc/fLdgRFHg/jester-joker-svgrepo-com.png" alt="Logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,21 +15,22 @@
           <router-link to="/about">About</router-link>
         </li>
         <li class="nav-item">
-            <router-link to="/products">Products</router-link>
+            <router-link to="/product">Products</router-link>
           </li>
           <li class="nav-item">
             <router-link to="/contact">Contact</router-link>
           </li>
-          <li class="nav-item">
-            <router-link to="/users">Users</router-link>
-          </li>
       </ul>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <router-link to="/login">Login</router-link>
+          <router-link to="/profile"><i class="bi bi-person"></i></router-link>
+        </li>
+        <li class="nav-item">
+            <router-link to="/login">Login</router-link> /
+            <router-link to="/register">Register</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/register">Register</router-link>
+            <router-link to="/checkout"><i class="bi bi-cart"></i></router-link>
           </li>
       </ul>
     </div>
@@ -45,5 +46,7 @@
 </script>
 
 <style scoped>
-
+.navcolor{
+  background-color: grey;
+}
 </style>
