@@ -24,8 +24,8 @@
                 <td>{{product.amount}}</td>
                 <td>{{product.Category}}</td>
                 <td><img :src="product.prodUrl" :alt="product.prodName" style="height: 15rem"></td>
-                <td><button>Edit</button></td>
-                <td><button>Delete</button></td>
+                <td><button class="btn">Edit</button></td>
+                <td><button class="btn" type="button" @click="deleteProd(product.prodID)">Delete</button></td>
             </tr>
         </tbody>
 </div>
@@ -62,7 +62,7 @@
                 <td>{{user.userPass}}</td>
                 <td><img :src="user.userProfile" class="card-img-top" :alt="user.prodName" style="height: 15rem"></td>
                 <td><button>Edit</button></td>
-                <td><button>Delete</button></td>    
+                <td><button class="btn" type="button" @click="deleteUsers(user.userID)">Delete</button></td>    
             </tr>
         </tbody>
 </div>
@@ -93,6 +93,14 @@ import SortProductsComp from '../components/SortProductsComp.vue'
         mounted(){
             return this.$store.dispatch('fetchProducts'),
             this.$store.dispatch('fetchUsers')
+        },
+        methods:{
+            deleteProd(prodID){
+                this.$store.dispatch('deleteProduct', prodID)
+            },
+            deleteUsers(userID){
+                this.$store.dispatch('deleteUser', userID)
+            }
         }
     }
 </script>

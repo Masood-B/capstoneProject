@@ -18,11 +18,23 @@ export default createStore({
     setUsers(state, users){
       state.users = users
     },
+    setDeleteUser(state, rusers){
+      state.users = rusers
+    },
+    setAddUser(state, auser){
+      state.users = auser
+    },
     setUser(state, user){
       state.user = user
     },
     setProducts(state, products){
       state.products = products
+    },
+    setDeleteProduct(state, rproduct){
+      state.products = rproduct
+    },
+    setAddProduct(state, aproduct){
+      state.products = aproduct
     },
     setProduct(state, product){
       state.product = product
@@ -44,6 +56,34 @@ export default createStore({
         context.commit("setUsers", data.results)
       }catch(e){
         context.commit("setMsg", "An error occured")
+      }
+    },
+    async deleteProduct(context, prodID){
+      try{
+        const remove = await axios.delete(`${mangaUrl}product/${prodID}`)
+        context.commit("setDeleteProduct", remove)
+        location.reload()
+      }catch(e){
+        context.commit("setMsg", "An error occured")
+      }
+    },
+    async deleteUser(context, userID){
+      try{
+        const remove = await axios.delete(`${mangaUrl}users/${userID}`)
+        context.commit("setDeleteUser", remove)
+        location.reload()
+      }catch(e){
+        context.commit("setMsg", "An error occured")
+      }
+    },
+    async addProduct(context, products){
+      try{
+        const add = await axios.post(`${mangaUrl}products`, products)
+        context.commit("setAddProduct", add)
+        location.reload()
+      }catch(e){
+        // context.commit("setMsg", "An error occured")
+        console.log(e);
       }
     }
   },

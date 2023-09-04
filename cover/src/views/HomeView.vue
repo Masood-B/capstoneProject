@@ -2,9 +2,21 @@
   <div>
 <carousel/>
 <div class="aboutContent">
-<h2 class="display-2">Feature Products</h2>
+  <div class="container">
+    <div class="row">
+<h2 class="display-2">New Products</h2>
+<FeatureCards/>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+<h2 class="display-2">Best Selling Products</h2>
+<FeatureCards/>
+    </div>
+  </div>
 <div class="container">
   <div class="row">
+    <h2 class="display-2">Feature Products</h2>
     <FeatureCards/>
   </div>
 </div>

@@ -8,16 +8,17 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://wallpaperset.com/w/full/b/f/2/153494.jpg" class="d-block image" alt="...">
-                    <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus laboriosam iusto veritatis accusamus velit </h2>
+                    <img src="https://wallpaperset.com/w/full/b/f/2/153494.jpg" class="d-block image" alt="..." loading="lazy">
+                    <h2 class="carousel-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. </h2>
                   </div>
                   <div class="carousel-item">
-                    <img src="https://wallpapercave.com/wp/4rCGn9D.jpg" class="d-block image" alt="...">
-                    <h2>optio recusandae dolore dignissimos, eos perspiciatis similique? Cum sequi amet distinctio consequatur beatae, maxime nisi commodi. <button class="btn btn-primary">Go HERE</button></h2>
+                    <img src="https://wallpapercave.com/wp/4rCGn9D.jpg" class="d-block image" alt="..." loading="lazy">
+                    <h2 class="carousel-content">optio recusandae dolore dignissimos, eos perspiciatis <span></span></h2>
+                    <h2 class="product-link"><router-link to="/product">More Products</router-link></h2>
                   </div>
                   <div class="carousel-item">
-                    <img src="https://e1.pxfuel.com/desktop-wallpaper/544/792/desktop-wallpaper-bloodhound-dog-pack-in-pack-of-dogs.jpg" class="d-block image" alt="...">
-                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus commodi consequuntur iusto ullam necessitatibus nam placeat</h2>
+                    <img src="https://e1.pxfuel.com/desktop-wallpaper/544/792/desktop-wallpaper-bloodhound-dog-pack-in-pack-of-dogs.jpg" class="d-block image" alt="..." loading="lazy">
+                    <h2 class="carousel-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
                   </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -50,8 +51,15 @@ h2{
   width:100%;
   }
   
-h2{
+.carousel-content{
 position: absolute;
-top: 80%;
+top: 70%;
+left:30%;
 }
+.product-link{
+  position: absolute;
+top: 80%;
+left:45%;
+}
+
 </style>

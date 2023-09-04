@@ -13,23 +13,23 @@
                         <div class="card">
                         <h2><i class="bi bi-envelope"></i></h2>
                         <h3>Email</h3>
-                        <p>TestDummy@gmail.com</p>
+                        <p>masoodbasardien123@gmail.com</p>
                     </div>
                     </div>
                     <div class="col-4">
                         <div class="card">
-                        <h2><i class="bi bi-geo-alt-fill"></i>: </h2>
+                        <h2><i class="bi bi-geo-alt-fill"></i></h2>
                         <h3>Address</h3>
-                        <p>--------------</p>
+                        <p>14 Chapel Road, <span>Harmony village, Cape Town, 7785</span></p>
                     </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
-                        <img src="https://e1.pxfuel.com/desktop-wallpaper/5/685/desktop-wallpaper-bloodhound-puppy-5-cool-bloodhound-puppy-computer.jpg" alt="">
+                    <div class="col-12 col-lg-6 col-md-6">
+                        <img src="https://e1.pxfuel.com/desktop-wallpaper/5/685/desktop-wallpaper-bloodhound-puppy-5-cool-bloodhound-puppy-computer.jpg" class="w-100" alt="">
                     </div>
-                    <div class="col-md-6 ">
-                        <form action="https://formspree.io/f/xbjewvba" method="POST">
+                    <div class="col-12 col-lg-6 col-md-6 ">
+                        <form action="https://formspree.io/f/xbjewvba" class="w-100" method="POST">
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" name="fullname" class="form-label">Name</label>
                                 <input name="name" type="name" class="form-control" id="exampleFormControlInput1" placeholder="Your Name"  required
