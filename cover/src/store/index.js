@@ -1,6 +1,11 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
+import router from '@/router'
+import sweet from 'sweetalert'
+import { useCookies } from 'vue3-cookies'
 const mangaUrl = 'https://capstoneproject-1ls3.onrender.com/'
+import authUser from '../../services/AuthenticateUser'
+const {cookies} = useCookies()
 
 export default createStore({
   state: {
@@ -58,7 +63,12 @@ export default createStore({
         const {data} = await axios.get(`${mangaUrl}users`)
         context.commit("setUsers", data.results)
       }catch(e){
-        context.commit("setMsg", "An error occured")
+        sweet({
+          title: "Error",
+          text: "An error occurred",
+          icon: "error",
+          timer: 500
+        })
       }
     },
     async deleteProduct(context, prodID){
@@ -79,6 +89,31 @@ export default createStore({
         context.commit("setMsg", "An error occured")
       }
     },
+    async addUser(context, payload){
+      try{
+        const {msg} = (await axios.post(`${mangaUrl}users`, payload))
+        if(msg){
+          sweet({
+            title: "Registration",
+            text: msg,
+            icon: "success",
+            timer: 500
+          })
+          context.dispatch('fetchUser')
+          router.push({name: 'login'})
+        }else{
+          sweet({
+            title: "Error",
+            text: msg,
+            icon: "error",
+            timer: 500
+          })
+        }
+      } catch(e){
+        console.log(e);
+      }
+    },
+
     async addProduct(context, productData){
       try{
         const add = await axios.post(`${mangaUrl}products`, productData)
@@ -89,8 +124,35 @@ export default createStore({
         // context.commit("setMsg", "An error occured")
         console.log(e);
       }
+    },
+    async login(context, payload){
+      try{
+        const {msg, token, result} = (await axios.post(`${mangaUrl}user`, payload))
+        if (result) {
+          context.commit(`setUsers`, {result, msg})
+          cookies.set('LegitUser', {token, msg, result})
+          authUser.applyToken(token)
+          sweet({
+            title: msg,
+            text: `Welcome back ${result?.firstName}
+            ${result?.lastName}`,
+            icon: "success",
+            timer: 500
+          })
+          router.push({name:'home'})
+        }else{
+          sweet({
+            title: "Error",
+            text: msg,
+            icon: "error",
+            timer: 500
+          })
+        }
+    } catch(e){
+      console.log(e);
     }
-  },
+  }
+},
   modules: {
   }
 })

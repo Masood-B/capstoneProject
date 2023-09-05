@@ -1,8 +1,8 @@
 import axios from 'axios'
 function applyToken(token){
     if(token){
-    axios.default.header = {
-        authorization: `${token}`
+    axios.defaults.headers = {
+        Authorization: `${token}`
     }
     }  
 }
