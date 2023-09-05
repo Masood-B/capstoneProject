@@ -33,7 +33,6 @@ class Users{
     }
     login(req, res) {
         const {emailAdd, userPass} = req.body
-        // query
         const query = `
         SELECT userID, firstName, lastName, gender, userAge, userDOB, userRole, emailAdd, userPass, userProfile
         FROM Users
@@ -51,7 +50,6 @@ class Users{
                     result[0].userPass,
                     (cErr, cResult)=>{
                         if(cErr) throw cErr
-                        // Create a token
                         const token =
                         createToken({
                             emailAdd,
@@ -76,14 +74,11 @@ class Users{
     }
     async register(req, res){
         const data = req.body
-        // Encrypt password
         data.userPass = await hash(data.userPass,15)
-        //Payload
         const user = {
             emailAdd: data.emailAdd,
             userPass: data.userPass
         }
-        //query
         const query = `
         INSERT INTO Users
         SET ?;
@@ -92,7 +87,6 @@ class Users{
             [data],
             (err)=>{
             if (err) throw err
-            // CREATE TOKEN
             let token = createToken(user) 
             res.json({
                 status: res.statusCode,
