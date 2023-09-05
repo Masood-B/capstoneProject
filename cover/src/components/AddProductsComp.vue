@@ -47,8 +47,8 @@
         return{
           productData:{
             prodName: "",
-            quantity: '',
-            amount: '',
+            quantity: "",
+            amount: "",
             Category: "",
             prodUrl: ""
           }
@@ -59,7 +59,7 @@
       },
         methods:{
           async addProduct(){
-            this.$store.dispatch("addProduct")
+            this.$store.dispatch("addProduct", this.productData)
           }
         }
     }

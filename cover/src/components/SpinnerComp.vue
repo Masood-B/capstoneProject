@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="loading-spinner">
-            <img src="https://i.postimg.cc/ncYtFNFF/Sharingan.gif" alt="Loading Spinner" style="width:18rem"/>
+            <img src="https://i.postimg.cc/ncYtFNFF/Sharingan.gif" alt="Loading Spinner" style="width:10rem"/>
             <span class="visually-hidden">Loading...</span>
           </div>
     </div>
