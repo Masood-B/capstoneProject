@@ -54,11 +54,8 @@
           }
         }
       },
-      mounted(){
-        this.$store.dispatch('addProduct')
-      },
         methods:{
-          async addProduct(){
+           addProduct(){
             this.$store.dispatch("addProduct", this.productData)
           }
         }

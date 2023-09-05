@@ -57,8 +57,8 @@ import SpinnerComp from '../components/SpinnerComp.vue'
                 return this.$store.state.products
             }
         },
-        mounted(){
-            return this.$store.dispatch('fetchProducts')
+        created(){
+            this.$store.dispatch('fetchProducts')
         }
     }
 </script>

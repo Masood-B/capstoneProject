@@ -83,7 +83,7 @@ export default createStore({
       try{
         const add = await axios.post(`${mangaUrl}products`, productData)
         context.commit("setAddProduct", add)
-        context.commit("setProducts")
+        context.commit("setProduct")
         // location.reload()
       }catch(e){
         // context.commit("setMsg", "An error occured")
