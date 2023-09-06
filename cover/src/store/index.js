@@ -91,22 +91,22 @@ export default createStore({
     },
     async addUser(context, payload){
       try{
-        const {msg} = (await axios.post(`${mangaUrl}users`, payload))
+        const {msg} = (await axios.post(`${mangaUrl}users`, payload)).data
         if(msg){
           sweet({
             title: "Registration",
             text: msg,
             icon: "success",
-            timer: 500
+            timer: 5000
           })
-          context.dispatch('fetchUser')
+          context.dispatch('fetchUsers')
           router.push({name: 'login'})
         }else{
           sweet({
             title: "Error",
             text: msg,
             icon: "error",
-            timer: 500
+            timer: 5000
           })
         }
       } catch(e){
@@ -127,7 +127,7 @@ export default createStore({
     },
     async login(context, payload){
       try{
-        const {msg, token, result} = (await axios.post(`${mangaUrl}user`, payload))
+        const {msg, token, result} = (await axios.post(`${mangaUrl}user`, payload)).data
         if (result) {
           context.commit(`setUsers`, {result, msg})
           cookies.set('LegitUser', {token, msg, result})

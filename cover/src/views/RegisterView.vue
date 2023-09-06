@@ -3,32 +3,32 @@
         <div class="container">
             <h1 class="display-1">Create</h1>
             <div class="form">
-                <form action="">
+                <form class="form" @submit.prevent="registration">
                     <div class="name">
-                        <label for="firstname">Name</label>
-                        <input type="text" name="" id="">
+                        <label for="firstName">Name</label>
+                        <input type="text"  placeholder="First Name" v-model="payload.firstName" required>
                     </div>
                     <div class="surname">
                         <label for="lastname">Surname</label>
-                        <input type="text" name="" id="">
+                        <input type="text" placeholder="Last Name" v-model="payload.lastName" required>
                     </div>
                     <div class="gender">
                         <label for="gender">Gender</label>
-                        <input type="text" name="" id="">
+                        <input type="text" placeholder="Gender" v-model="payload.gender" required>
                     </div>
-                    <div class="dob">
-                        <label for="dateofbirth">DoB</label>
-                        <input type="number" name="" id="">
+                    <div class="Age">
+                        <label for="Age">Age</label>
+                        <input type="number" placeholder="Your Age" v-model="payload.userAge" required>
                     </div>
                     <div class="addemail">
                         <label for="email">Email</label>
-                        <input type="email" name="" id="">
+                        <input type="email" placeholder="Email Address" v-model="payload.emailAdd" required>
                     </div>
                     <div class="pwd">
                         <label for="password">Password</label>
-                        <input type="password" name="" id="">
+                        <input type="password" placeholder="Password" v-model="payload.userPass" required>
                     </div>
-                        <button>Create</button>
+                        <button type="submit" class="btn btn-primary">Create</button>
                 </form>
             </div>
         </div>
@@ -37,7 +37,24 @@
 
 <script>
     export default {
-        
+        data(){
+            return {
+                payload: {
+                    firstName: "",
+                    lastName: "",
+                    gender: "",
+                    userAge: null,
+                    emailAdd: "",
+                    userPass: "",
+                    userProfile: "https://i.postimg.cc/3rZ0H0D8/profile-Image.png"
+                }
+            }
+        },
+        methods: {
+            registration() {
+                this.$store.dispatch('addUser', this.payload)
+            }
+        }
     }
 </script>
 

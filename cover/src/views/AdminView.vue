@@ -9,7 +9,7 @@
         <div class="row">
             <AddProductsComp/>
         </div>
-        <div class="row" v-show="products?.length">
+        <div class="row">
             <table >
                 <thead>
                     <tr>
@@ -39,9 +39,16 @@
         </div>
 
 <div>
-    <h2 class="display-2">User Table</h2>
+    <div class="row">
+        <h2 class="display-2">User Table</h2>
+    </div>
+    <div class="row">
         <SortUsersComp/>
+    </div>
+    <div class="row">
         <AddUsersComp/>
+    </div>
+    <div class="row">
         <table>
             <thead>
                 <tr>
@@ -60,7 +67,7 @@
                 </tr>
             </thead>
             <tbody v-for="user in users" :key="user.userID">
-                <tr v-if="users">
+                <tr>
                     <th scope="row">{{ user.userID }}</th>
                     <td>{{ user.firstName }}</td>
                     <td>{{user.lastName}}</td>
@@ -76,6 +83,7 @@
                 </tr>
             </tbody>
         </table>
+    </div>
 </div>
     </div>
 </template>
@@ -102,10 +110,6 @@ import SortProductsComp from '../components/SortProductsComp.vue'
             }
         },
         mounted(){
-            this.$store.dispatch('fetchProducts')
-            this.$store.dispatch('fetchUsers')
-        },
-        updated() {
             this.$store.dispatch('fetchProducts')
             this.$store.dispatch('fetchUsers')
         },
