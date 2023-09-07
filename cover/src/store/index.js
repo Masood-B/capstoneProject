@@ -15,7 +15,8 @@ export default createStore({
     product: null,
     spinner: false,
     token: null,
-    msg: null
+    msg: null,
+    eproduct: null
   },
   getters: {
   },
@@ -40,6 +41,9 @@ export default createStore({
     },
     setAddProduct(state, aproduct){
       state.products = aproduct
+    },
+    setEditProduct(state, eproduct){
+      state.products = eproduct
     },
     setProduct(state, product){
       state.product = product
@@ -113,13 +117,12 @@ export default createStore({
         console.log(e);
       }
     },
-
     async addProduct(context, productData){
       try{
         const add = await axios.post(`${mangaUrl}products`, productData)
         context.commit("setAddProduct", add)
         context.commit("setProduct")
-        // location.reload()
+        location.reload()
       }catch(e){
         // context.commit("setMsg", "An error occured")
         console.log(e);
@@ -151,7 +154,33 @@ export default createStore({
     } catch(e){
       console.log(e);
     }
-  }
+    },
+    async editProduct(context, productEdit){
+      try{
+        const edit = await axios.patch(`${mangaUrl}products/${prodID}`, productEdit)
+        context.commit("setEditProduct", edit)
+      }catch(e){
+        console.log(e);
+      }
+    },
+    async EditProdConfirm(context, editprod){
+      try {
+        const res = await axios.patch(`${mangaUrl}products/${editprod.prodID}`, editprod);
+        context.commit("setEditProduct", res.eproduct)
+        console.log("updated successuful");
+      } catch(e) {
+        console.log("did not work");
+      }
+    },
+    async EditUserConfirm(context, edituse){
+      try {
+        const res = await axios.patch(`${mangaUrl}users/${edituse.puserID}`, edituse);
+        context.commit("setEditProduct", res.eproduct)
+        console.log("updated successuful");
+      } catch(e) {
+        console.log("did not work");
+      }
+    }
 },
   modules: {
   }

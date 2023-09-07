@@ -46,6 +46,18 @@ const routes = [
     path: '/admin',
     name: 'admin',
     component: () => import('../views/AdminView.vue')
+  },
+  {
+    path: '/editP/:id',
+    name: 'editP',
+    props: true,
+    component: () => import('../views/EditPView.vue')
+  },
+  {
+    path: '/editU/:id',
+    name: 'editU',
+    props: true,
+    component: () => import('../views/EditUView.vue')
   }
 ]
 

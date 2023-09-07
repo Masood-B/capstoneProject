@@ -50,7 +50,7 @@
             quantity: "",
             amount: "",
             Category: "",
-            prodUrl: ""
+            prodUrl: "https://i.postimg.cc/3rZ0H0D8/profile-Image.png"
           }
         }
       },
