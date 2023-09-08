@@ -50,6 +50,15 @@ export default createStore({
     },
     setMsg(state, msg){
       state.msg = msg
+    },
+    sortTheProducts: (state)=> {
+      state.products.sort((a,b)=>{
+        return a.quantity - b.quantity;
+      });
+      if (!state.asc) {
+        state.products.reverse();
+      }
+      state.asc = !state.asc;
     }
 
   },

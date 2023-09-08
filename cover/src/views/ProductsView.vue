@@ -25,7 +25,7 @@
                 <h2 class="display-2">Products</h2>
                 <button class="btn">Sort</button>
             <div class="row justify-content-center gap-3" v-if="products">
-                <div class="card" v-for="product in products" style="width: 18rem;" :key="product.prodID">
+                <div class="card" v-for="product in products" style="width: 15rem;" :key="product.prodID">
                     <img :src="product.prodUrl" class="card-img-top" :alt="product.prodName">
                     <div class="card-body">
                       <h5 class="card-title">{{ product.prodName }}</h5>
