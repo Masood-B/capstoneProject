@@ -6,6 +6,9 @@
           <div class="filter">
             <h2 class="display-2">Filter</h2>
             <div class="row">
+              <button class="filterButton" @click="filterByDefault('')">
+                Default
+              </button>
               <button class="filterButton" @click="filterByCategory('Action')">
                 Action
               </button>
@@ -85,7 +88,7 @@
             <div
               class="card"
               v-for="product in filterProducts"
-              style="width: 15rem"
+              style="width: 14rem"
               :key="product.prodID"
             >
               <img
@@ -115,7 +118,6 @@
                 >
                   View More
                 </router-link>
-                <button @click="ButtonDeafault">default</button>
                 <button class="btn">Buy Now</button>
               </div>
             </div>
@@ -190,6 +192,9 @@ export default {
     filterByCategory(category) {
       this.SelectedCategory = category;
     },
+    filterByDefault() {
+      this.SelectedCategory = '';
+    }
   },
   created() {
     this.$store.dispatch("fetchProducts");
