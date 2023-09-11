@@ -4,9 +4,6 @@
       <h2 class="display-2">Product Table</h2>
     </div>
     <div class="row">
-      <button class="btn" id="productSort" @click="sortSProducts()">sort</button>
-    </div>
-    <div class="row">
       <AddProductsComp />
     </div>
     <div class="row">
@@ -62,9 +59,6 @@
     <div>
       <div class="row">
         <h2 class="display-2">User Table</h2>
-      </div>
-      <div class="row">
-        <SortUsersComp />
       </div>
       <div class="row">
         <AddUsersComp />
@@ -130,15 +124,12 @@
 <script>
 import AddUsersComp from "../components/AddUsersComp.vue";
 import AddProductsComp from "../components/AddProductsComp.vue";
-import SortUsersComp from "../components/SortUsersComp.vue";
 import EditProductComp from "../components/EditProductComp.vue";
 export default {
   components: {
     AddUsersComp,
     AddProductsComp,
-    SortUsersComp,
-    
-    EditProductComp,
+  EditProductComp,
   },
   computed: {
     products() {
@@ -158,22 +149,7 @@ export default {
     },
     deleteUsers(userID) {
       this.$store.dispatch("deleteUser", userID);
-    },
-    sortSProducts(){
-                this.cat  = !this.cat
-                this.products.sort((a, b) =>{
-                const bee = a.prodName.toLowerCase();
-                const dog = b.prodName.toLowerCase();
-                
-                if (bee < dog){
-                return this.cat ? -1: 1 ;
-                }else if (bee > dog) {
-                return this.cat ? 1: -1 ;
-                }else{
-                 return 0 
-                }
-                })
-                },
+    }
   },
 };
 </script>

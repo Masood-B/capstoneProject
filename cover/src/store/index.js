@@ -36,6 +36,9 @@ export default createStore({
     setProducts(state, products){
       state.products = products
     },
+    setProduct(state, product){
+      state.product = product
+    },
     setDeleteProduct(state, rproduct){
       state.products = rproduct
     },
@@ -44,9 +47,6 @@ export default createStore({
     },
     setEditProduct(state, eproduct){
       state.products = eproduct
-    },
-    setProduct(state, product){
-      state.product = product
     },
     setMsg(state, msg){
       state.msg = msg
@@ -71,6 +71,20 @@ export default createStore({
         context.commit("setMsg", "An error occured")
       }
     },
+    async fetchProduct(context, prodID){
+      try{
+       
+        const {results} = (await axios.get(`${mangaUrl}products/${prodID}`)).data
+        if(results.length){
+          context.commit("setProduct", results)
+        }else {
+          console.log("No data");
+        }
+      }catch(e){
+        context.commit("setMsg", "An error occured")
+      }
+    },
+    
     async fetchUsers(context){
       try{
         const {data} = await axios.get(`${mangaUrl}users`)
