@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div class="container">
     <div class="row">
       <h2 class="display-2">Product Table</h2>
@@ -35,12 +36,7 @@
               />
             </td>
             <td>
-                <button>
-                <router-link
-                  :to="{ name: 'editP', params: { id: product.prodID } }"
-                  ><button class="btn">Edit</button></router-link
-                >
-              </button>
+              <EditProductComp/>
             </td>
             <td>
               <button
@@ -55,8 +51,9 @@
         </tbody>
       </table>
     </div>
+  </div>
 
-    <div>
+  <div class="container">
       <div class="row">
         <h2 class="display-2">User Table</h2>
       </div>
@@ -100,10 +97,9 @@
                   style="height: 15rem"
                 />
               </td>
-              <td><router-link
-                :to="{ name: 'editU', params: { id: user.userID } }"
-                ><button class="btn">Edit</button></router-link
-              ></td>
+              <td>
+              <EdiUserComp/>
+            </td>
               <td>
                 <button
                   class="btn"
@@ -118,18 +114,22 @@
         </table>
       </div>
     </div>
+    
   </div>
+  
 </template>
 
 <script>
 import AddUsersComp from "../components/AddUsersComp.vue";
 import AddProductsComp from "../components/AddProductsComp.vue";
 import EditProductComp from "../components/EditProductComp.vue";
+import EdiUserComp from "@/components/EdiUserComp.vue";
 export default {
   components: {
     AddUsersComp,
     AddProductsComp,
   EditProductComp,
+  EdiUserComp
   },
   computed: {
     products() {

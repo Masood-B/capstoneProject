@@ -48,18 +48,6 @@ const routes = [
     component: () => import('../views/AdminView.vue')
   },
   {
-    path: '/editP/:id',
-    name: 'editP',
-    props: true,
-    component: () => import('../views/EditPView.vue')
-  },
-  {
-    path: '/editU/:id',
-    name: 'editU',
-    props: true,
-    component: () => import('../views/EditUView.vue')
-  },
-  {
     path: '/product/:id',
     name: 'SingleProduct',
     component: () => import('../views/SingleProductView.vue')

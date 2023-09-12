@@ -8,17 +8,17 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://wallpaperset.com/w/full/b/f/2/153494.jpg" class="d-block image" alt="..." loading="lazy">
-                    <h2 class="carousel-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. </h2>
+                    <img src="https://i.postimg.cc/RCkSBGGf/wallpaperflare-com-wallpaper-9.jpg" class="d-block image" alt="Bleach" loading="lazy">
+                    <h2 class="carousel-content">optio recusandae dolore dignissimos, eos perspiciatis </h2>
                   </div>
                   <div class="carousel-item">
-                    <img src="https://wallpapercave.com/wp/4rCGn9D.jpg" class="d-block image" alt="..." loading="lazy">
-                    <h2 class="carousel-content">optio recusandae dolore dignissimos, eos perspiciatis <span></span></h2>
+                    <img src="https://i.postimg.cc/15ys7b4C/wp9544482-anime-girl-silhouette-wallpapers.jpg" class="d-block image" alt="Random Girl" loading="lazy">
+                    <h2 class="carousel-content">optio recusandae dolore dignissimos, eos perspiciatis</h2>
                     <h2 class="product-link"><router-link to="/product">More Products</router-link></h2>
                   </div>
                   <div class="carousel-item">
-                    <img src="https://e1.pxfuel.com/desktop-wallpaper/544/792/desktop-wallpaper-bloodhound-dog-pack-in-pack-of-dogs.jpg" class="d-block image" alt="..." loading="lazy">
-                    <h2 class="carousel-content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                    <img src="https://i.postimg.cc/Vk5Y8TnY/wallpaperflare-com-wallpaper-8.jpg" class="d-block image" alt="Fairy Tail" loading="lazy">
+                    <h2 class="carousel-content">optio recusandae dolore dignissimos, eos perspiciatis</h2>
                   </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -41,7 +41,7 @@
 
 <style scoped>
 h2{
-  color: white;
+  color: black;
   font-size: clamp(1.1rem, 2.3vw, 2rem); 
 }
 

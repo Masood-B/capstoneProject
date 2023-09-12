@@ -8,6 +8,7 @@
                     <h5 class="card-title">{{ $route.query.name }}</h5>
                     <p class="card-text">R{{$route.query.price}}</p>
                     <p class="card-text">{{$route.query.category}}</p>
+                    <button class="btn">Buy Now</button>
             </div>
         </div>
     </div>

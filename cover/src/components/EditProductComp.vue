@@ -13,24 +13,28 @@
         <div class="modal-body">
             <form @submit.prevent="editProduct">
                 <div>
+            <label for="prod_id">ID</label>
+            <input type="text" class="form-control" placeholder="" id="prod_id" v-model="productEdit.prodID" aria-label="Title" required>
+          </div>
+                <div>
             <label for="productName">Name</label>
-            <input type="text" class="form-control" placeholder="" id="productName" v-model="editProduct.prodName" aria-label="Title" required>
+            <input type="text" class="form-control" placeholder="" id="productName" v-model="productEdit.prodName" aria-label="Title" required>
           </div>
           <div>
             <label for="productQuantity">Quantity</label>
-            <input type="number" class="form-control" placeholder="" id="productQuantity" v-model="editProduct.quantity" aria-label="Title" required>
+            <input type="number" class="form-control" placeholder="" id="productQuantity" v-model="productEdit.quantity" aria-label="Title" required>
           </div>
           <div>
             <label for="productAmount">Amount</label>
-            <input type="number" class="form-control" placeholder="" id="productAmount" v-model="editProduct.amount" aria-label="Title" required>
+            <input type="number" class="form-control" placeholder="" id="productAmount" v-model="productEdit.amount" aria-label="Title" required>
           </div>
           <div>
             <label for="productCategory">Category</label>
-            <input type="text" class="form-control" placeholder="" id="productCategory" v-model="editProduct.Category" aria-label="Title" required>
+            <input type="text" class="form-control" placeholder="" id="productCategory" v-model="productEdit.Category" aria-label="Title" required>
           </div>
           <div>
             <label for="productPicture">Picture</label>
-            <input type="text" class="form-control" placeholder="" id="productPicture" v-model="editProduct.prodUrl" aria-label="Title" required>
+            <input type="text" class="form-control" placeholder="" id="productPicture" v-model="productEdit.prodUrl" aria-label="Title" required>
           </div>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Save changes</button>
@@ -46,7 +50,8 @@
      export default {
       data(){
         return{
-          productData:{
+          productEdit:{
+            prodID: "",
             prodName: "",
             quantity: "",
             amount: "",
@@ -58,6 +63,7 @@
         methods:{
            editProduct(){
             this.$store.dispatch("editProduct", this.productEdit)
+            this.$store.dispatch("fetchProducts")
           }
         }
     }
