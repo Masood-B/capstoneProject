@@ -1,14 +1,18 @@
 <template>
   <div>
     <h2 class="display-2">Single Product</h2>
-    <div>
-        <div class="card" style="width: 18rem;">
-            <img :src="$route.query.picture" class="card-img-top" :alt="$route.query.name">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $route.query.name }}</h5>
-                    <p class="card-text">R{{$route.query.price}}</p>
-                    <p class="card-text">{{$route.query.category}}</p>
-                    <button class="btn">Buy Now</button>
+    <div class="row">
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img :src="$route.query.picture" class="card-img-top" :alt="$route.query.name">
+            </div>
+        </div>
+        <div class="col-9">
+            <div>
+                <h5 class="card-title">{{ $route.query.name }}</h5>
+                <p class="card-text">R{{$route.query.price}}</p>
+                <p class="card-text">{{$route.query.category}}</p>
+                <button class="btn">Buy Now</button>
             </div>
         </div>
     </div>

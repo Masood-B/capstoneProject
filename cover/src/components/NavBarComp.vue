@@ -73,6 +73,6 @@ const {cookies} = useCookies()
 
 <style scoped>
 .navcolor{
-  background-color: grey;
+  background-color: rgb(56, 97, 99);
 }
 </style>

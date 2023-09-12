@@ -2,13 +2,18 @@
   <div>
   <div class="container">
     <div class="row">
+      <div class="col">
       <h2 class="display-2">Product Table</h2>
     </div>
-    <div class="row">
-      <AddProductsComp />
     </div>
     <div class="row">
-      <table>
+      <div class="col">
+      <AddProductsComp />
+    </div>
+    </div>
+    <div class="row">
+      <div class="col">
+      <table class="table table-responsive">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -32,7 +37,8 @@
               <img
                 :src="product.prodUrl"
                 :alt="product.prodName"
-                style="height: 15rem"
+                class="img-fluid"
+                style="max-height: 15rem"
               />
             </td>
             <td>
@@ -52,16 +58,22 @@
       </table>
     </div>
   </div>
+</div>
 
   <div class="container">
       <div class="row">
+        <div class="col">
         <h2 class="display-2">User Table</h2>
       </div>
-      <div class="row">
-        <AddUsersComp />
       </div>
       <div class="row">
-        <table>
+        <div class="col">
+        <AddUsersComp />
+      </div>
+      </div>
+      <div class="row">
+        <div class="row">
+        <table class="table table-responsive">
           <thead>
             <tr>
               <th scope="col">ID</th>
@@ -92,9 +104,9 @@
               <td>
                 <img
                   :src="user.userProfile"
-                  class="card-img-top"
+                  class="img-fluid"
                   :alt="user.prodName"
-                  style="height: 15rem"
+                  style="max-height: 15rem"
                 />
               </td>
               <td>
@@ -114,7 +126,8 @@
         </table>
       </div>
     </div>
-    
+  </div>
+
   </div>
   
 </template>
