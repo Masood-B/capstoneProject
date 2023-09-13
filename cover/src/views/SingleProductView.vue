@@ -9,7 +9,7 @@
         </div>
         <div class="col-9">
             <div>
-                <h5 class="card-title">{{ $route.query.name }}</h5>
+                <h2 class="card-title">{{ $route.query.name }}</h2>
                 <p class="card-text">R{{$route.query.price}}</p>
                 <p class="card-text">{{$route.query.category}}</p>
                 <button class="btn">Buy Now</button>
@@ -34,5 +34,7 @@ export default {
 </script>
 
 <style scoped>
-
+h2,p{
+    color:white
+}
 </style>
