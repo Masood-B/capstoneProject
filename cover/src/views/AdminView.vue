@@ -42,7 +42,7 @@
               />
             </td>
             <td>
-              <EditProductComp/>
+              <EditProductComp :productData="product"/>
             </td>
             <td>
               <button

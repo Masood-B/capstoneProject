@@ -14,39 +14,39 @@
                     <form @submit.prevent="editUser">
                         <div>
                     <label for="prod_id">ID</label>
-                    <input type="text" class="form-control" placeholder="" id="prod_id" v-model="userEdit.userID" aria-label="Title" required>
+                    <input type="text" class="form-control" placeholder="" id="prod_id" v-model="userEdit.userID" aria-label="Title" >
                   </div>
                         <div>
                     <label for="productName">Name</label>
-                    <input type="text" class="form-control" placeholder="" id="productName" v-model="userEdit.firstName" aria-label="Title" required>
+                    <input type="text" class="form-control" placeholder="" id="productName" v-model="userEdit.firstName" aria-label="Title" >
                   </div>
                   <div>
                     <label for="productQuantity">Surname</label>
-                    <input type="text" class="form-control" placeholder="" id="productQuantity" v-model="userEdit.lastName" aria-label="Title" required>
+                    <input type="text" class="form-control" placeholder="" id="productQuantity" v-model="userEdit.lastName" aria-label="Title" >
                   </div>
                   <div>
                     <label for="productAmount">Gender</label>
-                    <input type="text" class="form-control" placeholder="" id="productAmount" v-model="userEdit.gender" aria-label="Title" required>
+                    <input type="text" class="form-control" placeholder="" id="productAmount" v-model="userEdit.gender" aria-label="Title" >
                   </div>
                   <div>
                     <label for="productCategory">Age</label>
-                    <input type="number" class="form-control" placeholder="" id="productCategory" v-model="userEdit.userAge" aria-label="Title" required>
+                    <input type="number" class="form-control" placeholder="" id="productCategory" v-model="userEdit.userAge" aria-label="Title" >
                   </div>
                   <div>
                     <label for="productPicture">Role</label>
-                    <input type="text" class="form-control" placeholder="" id="productPicture" v-model="userEdit.userRole" aria-label="Title" required>
+                    <input type="text" class="form-control" placeholder="" id="productPicture" v-model="userEdit.userRole" aria-label="Title" >
                   </div>
                   <div>
                     <label for="productPicture">Email</label>
-                    <input type="text" class="form-control" placeholder="" id="productPicture" v-model="userEdit.emailAdd" aria-label="Title" required>
+                    <input type="text" class="form-control" placeholder="" id="productPicture" v-model="userEdit.emailAdd" aria-label="Title" >
                   </div>
                   <div>
                     <label for="productPicture">Password</label>
-                    <input type="text" class="form-control" placeholder="" id="productPicture" v-model="userEdit.userPass" aria-label="Title" required>
+                    <input type="text" class="form-control" placeholder="" id="productPicture" v-model="userEdit.userPass" aria-label="Title" >
                   </div>
                   <div>
                     <label for="productPicture">Profile</label>
-                    <input type="text" class="form-control" placeholder="" id="productPicture" v-model="userEdit.userProfile" aria-label="Title" required>
+                    <input type="text" class="form-control" placeholder="" id="productPicture" v-model="userEdit.userProfile" aria-label="Title" >
                   </div>
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   <button type="submit" class="btn btn-primary">Save changes</button>

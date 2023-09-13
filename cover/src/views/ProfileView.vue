@@ -2,8 +2,8 @@
     <div>
         <h1>My Account</h1>
         <div>
-            <h2>Full Name</h2>
-            {{ $store.state.user?.firstName }} {{ $store.state.user?.lastName }}
+            <h2 class="display-2">Full Name</h2>
+           <h2>{{ $store.state.user?.firstName }} {{ $store.state.user?.lastName }}</h2> 
         </div>
         <div>
             <h2>Picture</h2>
@@ -11,7 +11,7 @@
         </div>
         <div>
             <h2>Email</h2>
-            {{ $store.state.user?.userAdd }}
+           <h2>{{ $store.state.user?.emailAdd }}</h2> 
         </div>
 
         <div>
@@ -44,5 +44,10 @@
 </script>
 
 <style scoped>
-
+h2{
+    color: white;
+}
+img{
+    border-radius: 15rem;
+}
 </style>

@@ -49,16 +49,7 @@ export default createStore({
     },
     setMsg(state, msg) {
       state.msg = msg;
-    },
-    sortTheProducts: (state) => {
-      state.products.sort((a, b) => {
-        return a.quantity - b.quantity;
-      });
-      if (!state.asc) {
-        state.products.reverse();
-      }
-      state.asc = !state.asc;
-    },
+    }
   },
   actions: {
     async fetchProducts(context) {
@@ -82,7 +73,6 @@ export default createStore({
         context.commit("setMsg", "An error occured");
       }
     },
-
     async fetchUsers(context) {
       try {
         const { data } = await axios.get(`${mangaUrl}users`);
@@ -185,6 +175,7 @@ export default createStore({
             timer: 500,
           });
         }
+
       } catch (e) {
         console.log(e);
       }
@@ -195,24 +186,26 @@ export default createStore({
           `${mangaUrl}products/${productEdit.prodID}`,
           productEdit
         );
+        context.commit('setProducts', edit)
+        context.dispatch('fetchProducts')
       } catch (e) {
         console.log(e);
       }
     },
     async editUser(context, userEdit) {
       try {
-        const edit = await axios.patch(
-          `${mangaUrl}users/${userEdit.userID}`,
-          userEdit
-        );
+        const edit = await axios.patch(`${mangaUrl}users/${userEdit.userID}`, userEdit);
+        context.commit('setUsers', edit)
+        context.dispatch('fetchUsers')
       } catch (e) {
         console.log(e);
       }
     },
-    logout(context) {
-      context.commit("setUser");
+    logout() {
       cookies.remove("LegitUser");
+      router.push({name: 'login'})
       localStorage.removeItem("user");
+      
     },
   },
   modules: {},

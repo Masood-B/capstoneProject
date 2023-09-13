@@ -10,6 +10,9 @@
 body{
     text-align: center;
     background-image: url(https://i.postimg.cc/3rzprg20/trees-3840x2160-light-green-4k-19568.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 /* Navbar Space */
 .nav-item{
