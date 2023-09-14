@@ -1,55 +1,55 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container mt-4">
       <div class="row">
-        <div class="filter col-3">
+        <div class="col-md-3">
           <div class="filter">
-            <h2 class="display-2">Filter</h2>
-            <div class="row">
-              <button class="filterButton" @click="filterByDefault('')">
+            <h2 class="display-4">Filter</h2>
+            <div class="btn-group-vertical">
+              <button class="btn btn-secondary" @click="filterByDefault('')">
                 Default
               </button>
-              <button class="filterButton" @click="filterByCategory('Action')">
+              <button class="btn btn-secondary" @click="filterByCategory('Action')">
                 Action
               </button>
               <button
-                class="filterButton"
+                class="btn btn-secondary"
                 @click="filterByCategory('Adventure')"
               >
                 Adventure
               </button>
-              <button class="filterButton" @click="filterByCategory('Comedy')">
+              <button class="btn btn-secondary" @click="filterByCategory('Comedy')">
                 Comedy
               </button>
-              <button class="filterButton" @click="filterByCategory('Ecchi')">
+              <button class="btn btn-secondary" @click="filterByCategory('Ecchi')">
                 Ecchi
               </button>
-              <button class="filterButton" @click="filterByCategory('Fantasy')">
+              <button class="btn btn-secondary" @click="filterByCategory('Fantasy')">
                 Fantasy
               </button>
               <button
-                class="filterButton"
+                class="btn btn-secondary"
                 @click="filterByCategory('historical')"
               >
                 Historical
               </button>
-              <button class="filterButton" @click="filterByCategory('Horror')">
+              <button class="btn btn-secondary" @click="filterByCategory('Horror')">
                 Horror
               </button>
-              <button class="filterButton" @click="filterByCategory('Mystery')">
+              <button class="btn btn-secondary" @click="filterByCategory('Mystery')">
                 Mystery
               </button>
-              <button class="filterButton" @click="filterByCategory('Romance')">
+              <button class="btn btn-secondary" @click="filterByCategory('Romance')">
                 Romance
               </button>
-              <button class="filterButton" @click="filterByCategory('Sci-Fi')">
+              <button class="btn btn-secondary" @click="filterByCategory('Sci-Fi')">
                 Sci-Fi
               </button>
-              <button class="filterButton" @click="filterByCategory('Shonen')">
+              <button class="btn btn-secondary" @click="filterByCategory('Shonen')">
                 Shonen
               </button>
               <button
-                class="filterButton"
+                class="btn btn-secondary"
                 @click="filterByCategory('Supernatural')"
               >
                 Supernatural
@@ -57,51 +57,60 @@
             </div>
           </div>
         </div>
-        <div class="products col-9">
-          <h2 class="display-2">Products</h2>
-          <div class="row">
-            <div class="search-bar">
-              <input
-                type="search"
-                placeholder="Search by name..."
-                v-model="searchQuery"
-              />
-            </div>
-            <div class="dropdown">
-              <button
-                class="btn btn-secondary dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Sort
-              </button>
-              <ul class="dropdown-menu">
-                <div class="row">
+        <div class="col-md-9">
+          <h2 class="display-4">Products</h2>
+      
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-group">
+                <input
+                  type="search"
+                  class="form-control"
+                  placeholder="Search by name..."
+                  v-model="searchQuery"
+                />
+              </div>
+              </div>
+              <div class="col-md-6">
+                <div class="dropdown">
                   <button
-                    class="btn"
-                    id="productSort"
-                    @click="ButtonDeafault()"
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
                   >
-                    Default
+                    Sort
                   </button>
-                  <button class="btn" id="productSort" @click="sortAmount()">
-                    Price
-                  </button>
-                  <button class="btn" id="productName" @click="sortName()">
-                    Name
-                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    
+                      <button
+                        class="dropdown-item"
+                        
+                        @click="ButtonDeafault()"
+                      >
+                        Default
+                      </button>
+                      <button class="dropdown-item"  @click="sortAmount()">
+                        Price
+                      </button>
+                      <button class="dropdown-item"  @click="sortName()">
+                        Name
+                      </button>
+                    
+                  </ul>
                 </div>
-              </ul>
+              </div>
             </div>
-          </div>
-          <div class="row justify-content-center gap-3" v-if="products">
+          
+          <div class="row mt-3" v-if="products">
             <div
-              class="card"
-              v-for="product in filterProducts"
-              style="width: 14rem"
+              class="col-md-4 mb-4"
+              v-for="product in searchProducts"
+             
               :key="product.prodID"
             >
+            <div class="card h-100 card-background">
               <img
                 :src="product.prodUrl"
                 class="card-img-top"
@@ -125,11 +134,13 @@
                       picture: product.prodUrl,
                     },
                   }"
+                  class="btn btn-primary btn-block"
                 >
                   View More
                 </router-link>
-                <button @click="addToCart(product)" class="btn">Buy Now</button>
+                <button @click="addToCart(product)" class="btn btn-success btn-block">Buy Now</button>
               </div>
+            </div>
             </div>
           </div>
           <div v-else class="row">
@@ -240,10 +251,11 @@ export default {
 </script>
 
 <style scoped>
-.filterButton {
-  width: 12rem;
-}
+
 h2 {
   color: white;
+}
+.card-background{
+  background: rgb(186, 166, 144)
 }
 </style>
