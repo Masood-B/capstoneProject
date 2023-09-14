@@ -6,27 +6,27 @@
                 <form class="form" @submit.prevent="registration">
                     <div class="mb-3">
                         <label for="firstName" class="form-label">Name</label>
-                        <input type="text" class="form-control" placeholder="First Name" v-model="payload.firstName" required>
+                        <input type="text" id="firstName" class="form-control" placeholder="First Name" v-model="payload.firstName" required>
                     </div>
                     <div class="mb-3">
-                        <label for="lastname" class="form-label">Surname</label>
-                        <input type="text" class="form-control" placeholder="Last Name" v-model="payload.lastName" required>
+                        <label for="lastname" class="form-label">Last Name</label>
+                        <input type="text" id="lastname" class="form-control" placeholder="Last Name" v-model="payload.lastName" required>
                     </div>
                     <div class="mb-3">
                         <label for="gender" class="form-label">Gender</label>
-                        <input type="text" class="form-control" placeholder="Gender" v-model="payload.gender" required>
+                        <input type="text" id="gender" class="form-control" placeholder="Gender" v-model="payload.gender" required>
                     </div>
                     <div class="mb-3">
                         <label for="Age" class="form-label">Age</label>
-                        <input type="number" class="form-control" placeholder="Your Age" v-model="payload.userAge" required>
+                        <input type="number" id="Age" class="form-control" placeholder="Your Age" v-model="payload.userAge" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" placeholder="Email Address" v-model="payload.emailAdd" required>
+                        <input type="email" id="email" class="form-control" placeholder="Email Address" v-model="payload.emailAdd" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" placeholder="Password" v-model="payload.userPass" required>
+                        <input type="password" id="password" class="form-control" placeholder="Password" v-model="payload.userPass" required>
                     </div>
                         <button type="submit" class="btn btn-primary">Create</button>
                 </form>
