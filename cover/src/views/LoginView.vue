@@ -13,8 +13,8 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Sign In</button>
                     <div>
-                        <router-link to="#">Forgot your password</router-link> |
-                        <router-link to="/register">Create a account</router-link>
+                        <label>Dont have an account ?</label>
+                        <router-link to="/register" class="custom-link"> Create a account</router-link>
                     </div>
                   </form>
         </div>
@@ -43,5 +43,11 @@
 </script>
 
 <style scoped>
-
+.custom-link {
+    text-decoration: none;
+    color: black;
+  }
+label{
+color:white
+  }
 </style>

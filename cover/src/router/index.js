@@ -46,7 +46,12 @@ const routes = [
   {
     path: '/checkout',
     name: 'checkout',
-    component: () => import('../views/CheckoutView.vue')
+    component: () => import('../views/CheckoutView.vue'),
+    beforeEnter() {
+      if(!cookies.get('LegitUser')) {
+        router.push({name: 'login'})
+      }
+    },
   },
   {
     path: '/admin',
