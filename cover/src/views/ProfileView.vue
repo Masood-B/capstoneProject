@@ -31,11 +31,11 @@
             }
         },
         created(){
-            const saveUser = localStorage.getItem("user")
+            const saveUser = localStorage.getItem("profile")
             if (saveUser){
                 this.user = JSON.parse(saveUser)
             }
-            const data = JSON.parse(localStorage.getItem("user"))
+            const data = JSON.parse(localStorage.getItem("profile"))
             if (data){
                 this.$store.commit("setUser", data)
             }

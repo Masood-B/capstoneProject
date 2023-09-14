@@ -98,7 +98,7 @@
           <div class="row justify-content-center gap-3" v-if="products">
             <div
               class="card"
-              v-for="product in searchProducts"
+              v-for="product in filterProducts"
               style="width: 14rem"
               :key="product.prodID"
             >
@@ -128,7 +128,7 @@
                 >
                   View More
                 </router-link>
-                <button class="btn">Buy Now</button>
+                <button @click="addToCart(product)" class="btn">Buy Now</button>
               </div>
             </div>
           </div>
@@ -148,6 +148,7 @@ export default {
     return {
       SelectedCategory: null,
       searchQuery: "",
+      cart: [],
       flagFilter: false,
       flagSearch: false
     };
@@ -226,6 +227,11 @@ export default {
     filterByDefault() {
       this.SelectedCategory = "";
     },
+    addToCart(product){
+      this.cart.push(product)
+      console.log(this.cart)
+      // localStyorage.setItem("cart",JSON.stringify(this.cart))
+    }
   },
   created() {
     this.$store.dispatch("fetchProducts");

@@ -8,7 +8,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <li class="nav-item" >
           <router-link to="/">Home</router-link>
         </li>
         <li class="nav-item">
@@ -22,11 +22,11 @@
           </li>
       </ul>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item" v-show="result">
+        <li class="nav-item" >
           <router-link to="/profile"><i class="bi bi-person"></i></router-link>
         </li>
-        <li class="nav-item">
-          <router-link to="/admin" v-show="isAdmin"><i class="bi bi-gear"></i></router-link>
+        <li class="nav-item" v-show="isAdmin">
+          <router-link to="/admin"><i class="bi bi-gear"></i></router-link>
         </li>
         <li class="nav-item" >    
             <router-link to="/login">Login</router-link> /
@@ -48,17 +48,15 @@ const {cookies} = useCookies()
     export default {
         computed:{
           user() {
-            return this.$store.state.user?.length ? this.$store.state.user : cookies.get('LegitUser')
+            return this.$store.state.user || cookies.get('LegitUser')
           },
-          result(){
+          results(){
             return this.user?.result
           },
           isAdmin(){
-          return this.result?.userRole?.toLowerCase() === "admin"
+          return this.results?.userRole?.toLowerCase() === "admin"
         }, 
-        },
-        
-        
+      },
     }
 </script>
 

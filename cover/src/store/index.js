@@ -16,7 +16,6 @@ export default createStore({
     spinner: false,
     token: null,
     msg: null,
-    eproduct: null,
   },
   getters: {},
   mutations: {

@@ -35,12 +35,12 @@
                                 <input name="name" type="name" class="form-control" id="exampleFormControlInput1" placeholder="Your Name"  required
                                 oninvalid="this.setCustomValidity('You need to put your name here')"
                                 oninput="this.setCustomValidity('')">
-                                <label for="exampleFormControlInput1" name="fullname" class="form-label">Surname</label>
-                                <input name="name" type="name" class="form-control" id="exampleFormControlInput1" placeholder="Your Name"  required
+                                <label for="exampleFormControlInput2" name="fullname" class="form-label">Surname</label>
+                                <input name="Surname" type="Surname" class="form-control" id="exampleFormControlInput2" placeholder="Your Name"  required
                                 oninvalid="this.setCustomValidity('You need to put your name here')"
                                 oninput="this.setCustomValidity('')">
-                                <label for="exampleFormControlInput2" name="email" class="form-label">Email address</label>
-                                <input name="email" type="email" class="form-control" id="exampleFormControlInput2" placeholder="Your Email"  required
+                                <label for="exampleFormControlInput3" name="email" class="form-label">Email address</label>
+                                <input name="email" type="email" class="form-control" id="exampleFormControlInput3" placeholder="Your Email"  required
                                 oninvalid="this.setCustomValidity('You need to put your email here')"
                                 oninput="this.setCustomValidity('')">
                               </div>

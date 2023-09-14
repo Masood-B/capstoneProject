@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-
+import { useCookies } from 'vue3-cookies'
+const {cookies} = useCookies()
 const routes = [
   {
     path: '/',
@@ -25,7 +26,12 @@ const routes = [
   {
     path: '/profile',
     name: 'profile',
-    component: () => import('../views/ProfileView.vue')
+    component: () => import('../views/ProfileView.vue'),
+    beforeEnter() {
+      if(!cookies.get('LegitUser')) {
+        router.push({name: 'login'})
+      }
+    },
   },
   {
     path: '/login',
