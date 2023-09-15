@@ -36,7 +36,6 @@
         methods:{
             login(){
                 this.$store.dispatch('login', this.payload)
-                this.$store.state.cart = []
             }
         },
         beforeCreate(){
