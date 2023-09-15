@@ -13,7 +13,7 @@ routes.get('/users', (req,res)=>{
 routes.get('/users/:id', (req, res)=>{
     users.fetchUser(req, res)
 })
-
+ 
 routes.post('/users', bodyParser.json(),
 (req, res)=>{
     users.register(req, res)
