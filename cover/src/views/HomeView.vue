@@ -3,18 +3,18 @@
 <carousel/>
 <div class="aboutContent">
   <div class="container">
-    <div class="row">
-<h2 class="display-2">New Products</h2>
+    <div class="px-2">
+<h2 class="display-4">New Products</h2>
 <div class="row justify-content-center gap-3" v-if="products">
   <div
-    class="card"
+    class="card col-md-3 col-sm-6"
     v-for="product in reversedSlicedProducts"
     style="width: 18rem"
     :key="product.prodID"
   >
     <img
       :src="product.prodUrl"
-      class="card-img-top"
+      class="card-img-top img-fluid"
       :alt="product.prodName"
     />
     <div class="card-body">
@@ -45,18 +45,18 @@
     </div>
   </div>
   <div class="container">
-    <div class="row">
-<h2 class="display-2">Recommend Products</h2>
+    <div class="px-2">
+<h2 class="display-4">Recommend Products</h2>
 <div class="row justify-content-center gap-3" v-if="products">
   <div
-    class="card"
+    class="card col-md-3 col-sm-6"
     v-for="product in randomProducts"
     style="width: 18rem"
     :key="product.prodID"
   >
     <img
       :src="product.prodUrl"
-      class="card-img-top"
+      class="card-img-top img-fluid"
       :alt="product.prodName"
     />
     <div class="card-body">
@@ -87,18 +87,18 @@
     </div>
   </div>
 <div class="container">
-  <div class="row">
-    <h2 class="display-2">Feature Products</h2>
+  <div class="px-2">
+    <h2 class="display-4">Adventure Products</h2>
 <div class="row justify-content-center gap-3" v-if="products">
   <div
-    class="card"
+    class="card col-md-3 col-sm-6"
     v-for="product in adventureProducts"
     style="width: 18rem"
     :key="product.prodID"
   >
     <img
       :src="product.prodUrl"
-      class="card-img-top"
+      class="card-img-top img-fluid"
       :alt="product.prodName"
     />
     <div class="card-body">
