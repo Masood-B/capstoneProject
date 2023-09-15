@@ -1,6 +1,6 @@
 <template>
     <div>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="`#${exampleModal}${productData.prodID}`">
+<button type="button" class="btn btn-secondary" data-bs-toggle="modal" :data-bs-target="`#${exampleModal}${productData.prodID}`">
     Edit
   </button>
   <div class="modal fade" :id="`${exampleModal}${productData.prodID}`" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+        <button type="button" class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#exampleModal1">
             Add
           </button>
         <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -63,5 +63,7 @@
 </script>
 
 <style scoped>
-
+button{
+  color:white
+}
 </style>

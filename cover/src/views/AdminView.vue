@@ -13,7 +13,8 @@
     </div>
     <div class="row">
       <div class="col">
-      <table class="table table-responsive">
+        <div class="table-responsive">
+      <table class="table">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -46,7 +47,7 @@
             </td>
             <td>
               <button
-                class="btn"
+                class="btn btn-danger"
                 type="button"
                 @click="deleteProd(product.prodID)"
               >
@@ -58,6 +59,7 @@
       </table>
     </div>
   </div>
+</div>
 </div>
 
   <div class="container">
@@ -73,7 +75,8 @@
       </div>
       <div class="row">
         <div class="row">
-        <table class="table table-responsive">
+          <div class=" table-responsive">
+        <table class="table">
           <thead>
             <tr>
               <th scope="col">ID</th>
@@ -114,7 +117,7 @@
             </td>
               <td>
                 <button
-                  class="btn"
+                  class="btn btn-danger"
                   type="button"
                   @click="deleteUsers(user.userID)"
                 >
@@ -127,7 +130,7 @@
       </div>
     </div>
   </div>
-
+</div>
   </div>
   
 </template>
@@ -167,4 +170,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+h2{
+  color:white
+}
+
+</style>

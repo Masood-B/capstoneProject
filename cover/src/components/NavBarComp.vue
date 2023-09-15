@@ -25,7 +25,7 @@
         <li class="nav-item" >
           <router-link to="/profile"><i class="bi bi-person"></i></router-link>
         </li>
-        <li class="nav-item" v-show="isAdmin">
+        <li class="nav-item">
           <router-link to="/admin"><i class="bi bi-gear"></i></router-link>
         </li>
         <li class="nav-item" >    
