@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import { useCookies } from 'vue3-cookies'
+import LoginViewVue from '../views/LoginView.vue'
 const {cookies} = useCookies()
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'login',
+    component: LoginViewVue
   },
   {
     path: '/about',
@@ -34,9 +34,9 @@ const routes = [
     },
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import('../views/LoginView.vue')
+    path: '/home',
+    name: 'home',
+    component: () => import('../views/HomeView.vue')
   },
   {
     path: '/register',
