@@ -7,7 +7,7 @@
           <div class="card">
             <h2><i class="bi bi-telephone"></i></h2>
             <h3>Phone</h3>
-            <p>xxx-xxx-xxxx</p>
+            <p>079-298-0631</p>
           </div>
         </div>
         <div class="col-12 col-lg-4 mb-4">
@@ -111,5 +111,9 @@ export default {};
 .footer {
   margin-top: auto;
   flex-shrink: 0; 
+}
+
+label, h2{
+  color: white;
 }
 </style>

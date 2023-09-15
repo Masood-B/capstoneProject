@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="adminDisplay">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -131,6 +132,7 @@
     </div>
   </div>
 </div>
+</div>
   </div>
   
 </template>
@@ -173,6 +175,16 @@ export default {
 <style scoped>
 h2{
   color:white
+}
+.adminDisplay {
+  display: flex;
+  flex-direction: column;
+  min-height: 76.3vh;
+}
+
+.footer {
+  margin-top: auto;
+  flex-shrink: 0; 
 }
 
 </style>

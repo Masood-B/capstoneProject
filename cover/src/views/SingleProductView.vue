@@ -15,7 +15,7 @@
               <h2 class="card-title">{{ $route.query.name }}</h2>
               <p class="card-text">R{{$route.query.price}}</p>
               <p class="card-text">{{$route.query.category}}</p>
-              <button class="btn btn-primary">Buy Now</button>
+              <button class="btn btn-primary" @click="addToCart">Buy Now</button>
             </div>
           </div>
         </div>
@@ -35,7 +35,19 @@ export default {
         console.log("on mounted")
         this.$store.dispatch('fetchProduct', this.$route.params.id)
     },
-}
+},
+methods: {
+    addToCart() {
+      const product = {
+        id: this.$route.query.id,
+        name: this.$route.query.name,
+        price: this.$route.query.price,
+        category: this.$route.query.category,
+      };
+      this.$store.dispatch('addToCart', product);
+
+    },
+  },
 };
 </script>
 

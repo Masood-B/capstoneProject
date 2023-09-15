@@ -236,6 +236,7 @@ export default {
     },
     addToCart(product){
       this.cart.push(product)
+      localStorage.setItem("cart", JSON.stringify(this.cart))
       console.log(this.cart)
     }
   },

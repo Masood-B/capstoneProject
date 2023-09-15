@@ -46,8 +46,7 @@
               <h2 class="display-4">Check Out</h2>
             </div>
             <div class="card-body">
-              <label class="display-5">Total:</label>
-              <h2>...</h2>
+              <p class="display-5">Total: R</p>
               <button class="btn btn-primary btn-lg btn-block my-2">
                 Purchase
               </button>
@@ -79,15 +78,19 @@ export default {
     },
 },
 methods:{
-    removeItem(index){
-        const cart = JSON.parse(localStorage.getItem("cart")) || []
-        if (index >= 0 && index < cart.length){
-            cart.splice(index, 1)
-            localStorage.setItem("cart", JSON.stringify(cart))
-            this.cart = cart
+  removeItem(index) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (index >= 0 && index < cart.length) {
+        cart.splice(index, 1);
+if (cart.length === 0) {
+      localStorage.removeItem("cart");
+ } else {
+  localStorage.setItem("cart", JSON.stringify(cart));
         }
-location.reload()
+        this.cart = cart;
     }
+    location.reload()
+}
 }
 };
 </script>

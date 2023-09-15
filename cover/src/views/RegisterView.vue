@@ -4,7 +4,7 @@
 
         
         <div class="container">
-            <h1 class="display-1">Create</h1>
+            <h2 class="display-1">Create</h2>
             <div class="form">
                 <form class="form" @submit.prevent="registration">
                     <div class="mb-3">
@@ -72,5 +72,8 @@
   .footer {
     margin-top: auto;
     flex-shrink: 0; 
+  }
+ h2, label{
+    color:white
   }
 </style>

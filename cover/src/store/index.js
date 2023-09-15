@@ -174,7 +174,6 @@ export default createStore({
             timer: 500,
           });
         }
-
       } catch (e) {
         console.log(e);
       }

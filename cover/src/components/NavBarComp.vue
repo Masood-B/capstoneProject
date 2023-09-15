@@ -25,12 +25,11 @@
         <li class="nav-item" >
           <router-link to="/profile"><i class="bi bi-person"></i></router-link>
         </li>
-        <li class="nav-item">
-          <router-link to="/admin"><i class="bi bi-gear"></i></router-link>
+        <li class="nav-item" v-show="isAdmin">
+          <router-link to="/admin" ><i class="bi bi-gear"></i></router-link>
         </li>
         <li class="nav-item" >    
-            <router-link to="/login">Login</router-link> /
-            <router-link to="/register">Register</router-link>
+            <router-link to="/login">Login</router-link>
           </li>
           <li class="nav-item">
             <router-link to="/checkout"><i class="bi bi-cart"></i></router-link>

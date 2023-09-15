@@ -36,11 +36,13 @@
         methods:{
             login(){
                 this.$store.dispatch('login', this.payload)
+                this.$store.state.cart = []
             }
         },
         beforeCreate(){
             this.$store.dispatch('fetchUsers')
-        }
+        },
+        
     };
 </script>
 
@@ -49,7 +51,7 @@
     text-decoration: none;
     color: black;
   }
-label{
+h1, label{
 color:white
   }
   .loginDisplay {
