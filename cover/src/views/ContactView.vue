@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="contactDisplay">
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-4 mb-4">
@@ -93,6 +94,7 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -100,4 +102,14 @@ export default {};
 </script>
 
 <style scoped>
+.contactDisplay {
+  display: flex;
+  flex-direction: column;
+  min-height: 76.3vh;
+}
+
+.footer {
+  margin-top: auto;
+  flex-shrink: 0; 
+}
 </style>

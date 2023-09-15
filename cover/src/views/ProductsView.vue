@@ -107,7 +107,7 @@
           <div class="row mt-3" v-if="products">
             <div
               class="col-md-4 mb-4"
-              v-for="product in filterProducts"
+              v-for="product in filteredAndSearchedProducts"
              
               :key="product.prodID"
             >
@@ -162,37 +162,30 @@ export default {
       SelectedCategory: null,
       searchQuery: "",
       cart: [],
-      flagFilter: false,
-      flagSearch: false
     };
   },
   components: {
     SpinnerComp,
   },
   computed: {
-    products() {
-      return this.$store.state.products;
-    },
-    filterProducts() {
-      let filteredProducts = this.products;
-      if (this.SelectedCategory) {
-        filteredProducts = filteredProducts.filter((product) =>
-          product.Category.includes(this.SelectedCategory)
-        );
-      }
-      if (!this.SelectedCategory) {
-        return this.products;
-      }
-      return filteredProducts;
-    },
-    searchProducts() {
-      if (this.searchQuery) {
-        return this.searchBar()
-      } else {
-        return this.products
-      }
-    },
+  products() {
+    return this.$store.state.products;
   },
+  filteredAndSearchedProducts() {
+    let filteredProducts = this.products;
+    const isCategorySelected = !!this.SelectedCategory;
+    const isSearchQueryEntered = !!this.searchQuery;
+    if (isCategorySelected) {
+      filteredProducts = filteredProducts.filter((product) =>
+        product.Category.includes(this.SelectedCategory)
+      );
+    }
+    if (isSearchQueryEntered) {
+      return this.searchBar(filteredProducts);
+    }
+    return filteredProducts;
+  },
+},
   methods: {
     ButtonDeafault() {
       this.$store.dispatch("fetchProducts");
@@ -227,13 +220,14 @@ export default {
         }
       });
     },
-    searchBar() {
-      const query = this.searchQuery.toLowerCase()
-      return this.$store.state.products.filter((prod) => {
-        const ProdItem = prod.prodName.toLowerCase()
-        return ProdItem.includes(this.searchQuery)
-      })
-    },
+    searchBar(filteredProducts) {
+  const query = this.searchQuery.toLowerCase();
+  return filteredProducts.filter((prod) => {
+    const prodItem = prod.prodName.toLowerCase();
+    return prodItem.includes(query);
+  });
+},
+    
     filterByCategory(category) {
       this.SelectedCategory = category;
     },
@@ -243,7 +237,6 @@ export default {
     addToCart(product){
       this.cart.push(product)
       console.log(this.cart)
-      // localStyorage.setItem("cart",JSON.stringify(this.cart))
     }
   },
   created() {

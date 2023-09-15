@@ -3,47 +3,57 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <h2>Cart</h2>
+          <h2 class="mb-4">Cart</h2>
         </div>
       </div>
       <div class="row">
-        <div class="col-8">
-          <table class="table table-responsive">
-            <thead>
-              <tr>
-                <th scope="col">Picture</th>
-                <th scope="col">Name</th>
-                <th scope="col">Amount</th>
-                <th scope="col">Remove</th>
-              </tr>
-            </thead>
-            <tbody v-for="(items, index) in cart" :key="items">
-              <tr>
-                <td>
-                  <img
-                    :src="items.prodUrl"
-                    :alt="items.prodName"
-                    class="img-fluid"
-                    style="max-height: 15rem"
-                  />
-                </td>
-                <td>{{ items.prodName }}</td>
-                <td>R {{ items.amount }}</td>
-                <td><button class="btn btn-danger" @click="removeItem(index)">Delete</button></td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="col-lg-8">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Picture</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Remove</th>
+                </tr>
+              </thead>
+              <tbody v-for="(items, index) in cart" :key="items">
+                <tr>
+                  <td>
+                    <img
+                      :src="items.prodUrl"
+                      :alt="items.prodName"
+                      class="img-fluid"
+                      style="max-height: 15rem"
+                    />
+                  </td>
+                  <td>{{ items.prodName }}</td>
+                  <td>R {{ items.amount }}</td>
+                  <td>
+                    <button class="btn btn-danger" @click="removeItem(index)">
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div class="col-4">
+        <div class="col-lg-4">
           <div class="card">
             <div class="card-header">
-              <h2 class="display-2">Check Out</h2>
+              <h2 class="display-4">Check Out</h2>
             </div>
             <div class="card-body">
               <label class="display-5">Total:</label>
               <h2>...</h2>
-              <button class="btn btn-primary">Purchase</button>
-              <button class="btn btn-danger" @click="clearCart">Clear</button>
+              <button class="btn btn-primary btn-lg btn-block my-2">
+                Purchase
+              </button>
+              <button class="btn btn-danger btn-lg btn-block" @click="clearCart">
+                Clear
+              </button>
             </div>
           </div>
         </div>

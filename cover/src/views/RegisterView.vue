@@ -1,5 +1,8 @@
 <template>
     <div>
+        <div class="productDisplay">
+
+        
         <div class="container">
             <h1 class="display-1">Create</h1>
             <div class="form">
@@ -33,6 +36,7 @@
             </div>
         </div>
     </div>
+    </div>
 </template>
 
 <script>
@@ -59,5 +63,14 @@
 </script>
 
 <style scoped>
-
+.productDisplay {
+    display: flex;
+    flex-direction: column;
+    min-height: 76.3vh;
+  }
+  
+  .footer {
+    margin-top: auto;
+    flex-shrink: 0; 
+  }
 </style>
