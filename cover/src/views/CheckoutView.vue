@@ -1,6 +1,8 @@
 <template>
     <div>
+        <div class="cartDisplay">
         <CartComp/>
+    </div>
     </div>
 </template>
 
@@ -14,5 +16,14 @@ import CartComp from '@/components/CartComp.vue';
 </script>
 
 <style scoped>
-
+.cartDisplay {
+    display: flex;
+    flex-direction: column;
+    min-height: 76.3vh;
+  }
+  
+  .footer {
+    margin-top: auto;
+    flex-shrink: 0; 
+  }
 </style>

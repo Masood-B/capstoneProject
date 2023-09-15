@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="productDisplay">
     <div class="container mt-4">
       <div class="row">
         <div class="col-md-3">
@@ -106,7 +107,7 @@
           <div class="row mt-3" v-if="products">
             <div
               class="col-md-4 mb-4"
-              v-for="product in searchProducts"
+              v-for="product in filterProducts"
              
               :key="product.prodID"
             >
@@ -149,6 +150,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -257,5 +259,15 @@ h2 {
 }
 .card-background{
   background: rgb(186, 166, 144)
+}
+.productDisplay {
+  display: flex;
+  flex-direction: column;
+  min-height: 76.3vh;
+}
+
+.footer {
+  margin-top: auto;
+  flex-shrink: 0; 
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <div class="loginDisplay">
         <div class="container">
             <h1 class="display-1">Login</h1>
                 <form class="form" @submit.prevent="login">
@@ -19,6 +20,7 @@
                   </form>
         </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -49,5 +51,15 @@
   }
 label{
 color:white
+  }
+  .loginDisplay {
+    display: flex;
+    flex-direction: column;
+    min-height: 77vh;
+  }
+  
+  .footer {
+    margin-top: auto;
+    flex-shrink: 0; 
   }
 </style>

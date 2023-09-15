@@ -7,7 +7,7 @@
 <h2 class="display-4">New Products</h2>
 <div class="row justify-content-center gap-3" v-if="products">
   <div
-    class="card col-md-3 col-sm-6"
+    class="card col-md-3 col-sm-6 card-background"
     v-for="product in reversedSlicedProducts"
     style="width: 18rem"
     :key="product.prodID"
@@ -35,10 +35,10 @@
             picture: product.prodUrl,
           },
         }"
+        class="btn btn-primary btn-block"
       >
         View More
       </router-link>
-      <button @click="addToCart(product)" class="btn">Buy Now</button>
     </div>
   </div>
 </div>
@@ -49,7 +49,7 @@
 <h2 class="display-4">Recommend Products</h2>
 <div class="row justify-content-center gap-3" v-if="products">
   <div
-    class="card col-md-3 col-sm-6"
+    class="card col-md-3 col-sm-6 card-background"
     v-for="product in randomProducts"
     style="width: 18rem"
     :key="product.prodID"
@@ -77,10 +77,11 @@
             picture: product.prodUrl,
           },
         }"
+        class="btn btn-primary btn-block"
       >
         View More
       </router-link>
-      <button @click="addToCart(product)" class="btn">Buy Now</button>
+
     </div>
   </div>
 </div>
@@ -91,7 +92,7 @@
     <h2 class="display-4">Adventure Products</h2>
 <div class="row justify-content-center gap-3" v-if="products">
   <div
-    class="card col-md-3 col-sm-6"
+    class="card col-md-3 col-sm-6 card-background"
     v-for="product in adventureProducts"
     style="width: 18rem"
     :key="product.prodID"
@@ -119,10 +120,94 @@
             picture: product.prodUrl,
           },
         }"
+        class="btn btn-primary btn-block"
       >
         View More
       </router-link>
-      <button @click="addToCart(product)" class="btn">Buy Now</button>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="container">
+  <div class="px-2">
+    <h2 class="display-4">Shonen Products</h2>
+<div class="row justify-content-center gap-3" v-if="products">
+  <div
+    class="card col-md-3 col-sm-6 card-background"
+    v-for="product in shonenProducts"
+    style="width: 18rem"
+    :key="product.prodID"
+  >
+    <img
+      :src="product.prodUrl"
+      class="card-img-top img-fluid"
+      :alt="product.prodName"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ product.prodName }}</h5>
+      <p class="card-text">
+        R<span>{{ product.amount }}</span>
+      </p>
+    </div>
+    <div class="card-footer">
+      <router-link
+        :to="{
+          name: 'SingleProduct',
+          params: { id: product.prodID },
+          query: {
+            name: product.prodName,
+            price: product.amount,
+            category: product.Category,
+            picture: product.prodUrl,
+          },
+        }"
+        class="btn btn-primary btn-block"
+      >
+        View More
+      </router-link>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="container">
+  <div class="px-2">
+    <h2 class="display-4">Comedy Products</h2>
+<div class="row justify-content-center gap-3" v-if="products">
+  <div
+    class="card col-md-3 col-sm-6 card-background"
+    v-for="product in comedyProducts"
+    style="width: 18rem"
+    :key="product.prodID"
+  >
+    <img
+      :src="product.prodUrl"
+      class="card-img-top img-fluid"
+      :alt="product.prodName"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ product.prodName }}</h5>
+      <p class="card-text">
+        R<span>{{ product.amount }}</span>
+      </p>
+    </div>
+    <div class="card-footer">
+      <router-link
+        :to="{
+          name: 'SingleProduct',
+          params: { id: product.prodID },
+          query: {
+            name: product.prodName,
+            price: product.amount,
+            category: product.Category,
+            picture: product.prodUrl,
+          },
+        }"
+        class="btn btn-primary btn-block"
+      >
+        View More
+      </router-link>
     </div>
   </div>
 </div>
@@ -164,14 +249,18 @@ import FeatureCards from '@/components/FeatureCardsComp.vue'
     return selectedProducts;
     },
     adventureProducts() {
-    //if (this.category === "Adventure") {
-      return this.products?.filter(prod => prod.Category?.includes("Adventure")).slice(0, 4)
-      //find(product => product?.category?.includes("Adventure"));
-   // } 
-    // else {
-    //   return this.products;
-    // }
-}
+      const adventure = this.products?.filter(prod => prod.Category?.includes("Adventure")).slice(0, 4)
+      return adventure
+},
+shonenProducts() {
+      const shonen = this.products?.filter(prod => prod.Category?.includes("Shonen")).slice(0, 4)
+      return shonen
+},
+comedyProducts() {
+      const comedy = this.products?.filter(prod => prod.Category?.includes("Comedy")).slice(0, 4)
+      return comedy
+},
+
     },
     methods:{
       addToCart(product){
@@ -189,5 +278,8 @@ import FeatureCards from '@/components/FeatureCardsComp.vue'
 <style scoped>
 h2{
   color: white;
+}
+.card-background{
+  background: rgb(186, 166, 144)
 }
 </style>
