@@ -135,11 +135,11 @@
                       picture: product.prodUrl,
                     },
                   }"
-                  class="btn btn-primary btn-block"
+                  class="btn btn-primary btn-block button-hover-effect1"
                 >
                   View More
                 </router-link>
-                <button @click="addToCart(product)" class="btn btn-success btn-block">Buy Now</button>
+                <button @click="addToCart(product)" class="btn btn-success btn-block button-hover-effect">Buy Now</button>
               </div>
             </div>
             </div>
@@ -263,5 +263,23 @@ h2 {
 .footer {
   margin-top: auto;
   flex-shrink: 0; 
+}
+
+.button-hover-effect {
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.button-hover-effect:hover {
+  background-color: #4CAF50; 
+  transform: scale(1.05); 
+  cursor: pointer;
+}
+.button-hover-effect1{
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.button-hover-effect1:hover {
+  background-color: #83b4eb; 
+  transform: scale(1.05); 
+  cursor: pointer;
 }
 </style>

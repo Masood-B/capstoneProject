@@ -4,7 +4,7 @@
       <h2 class="mb-4">My Story</h2>
       <div class="row">
         <div class="col-lg-6 mb-4">
-          <p>Welcome to Green Out, your one-stop shop for manga fans all over the country! Our story is based on a simple yet deep idea: to make the world of manga more accessible and cheap for fans in our local community. Tired of seeing fans struggle with exorbitant shipping rates and lengthy wait times to obtain their favorite manga titles from overseas, we decided to bring the manga experience to them. Green Out is on a mission to reduce the inconveniences of international shipping by curating a large selection of manga titles that you can easily enjoy without having to worry about those pesky shipping expenses.</p>
+          <p>Welcome to <span class="green">Green</span><span class="black">Out</span>, your one-stop shop for manga fans all over the country! Our story is based on a simple yet deep idea: to make the world of manga more accessible and cheap for fans in our local community. Tired of seeing fans struggle with exorbitant shipping rates and lengthy wait times to obtain their favorite manga titles from overseas, we decided to bring the manga experience to them. Green Out is on a mission to reduce the inconveniences of international shipping by curating a large selection of manga titles that you can easily enjoy without having to worry about those pesky shipping expenses.</p>
           <p>We are passionate about manga, and our team works hard to keep our shelves loaded with the latest releases, classic favorites, and niche gems that cater to all tastes and interests. Whether you're an experienced manga collector or a curious newbie, you'll find something to pique your interest and take you to fascinating realms.</p>
         </div>
         <div class="col-lg-6 mb-4">
@@ -18,7 +18,7 @@
         </div>
       </div>
       <h2 class="mt-4">The Founder</h2>
-      <p>Hi, my name is Masood Basardien, and the reason I built this website is...</p>
+      <p>Hi, my name is Masood Basardien, and the reason I built this website is because im a geek who like to read books and learn the culture of Japan</p>
     </section>
   </div>
 </template>
@@ -36,5 +36,15 @@ h2, p {
 
 p {
   font-size: 1.3rem;
+  background: rgb(54, 53, 53, 0.9);
+}
+.green{
+  color: green;
+}
+.black{
+  color: black;
+}
+span{
+  background:rgba(221, 194, 194, 0.7)
 }
 </style>

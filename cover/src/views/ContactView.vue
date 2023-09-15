@@ -31,7 +31,7 @@
         </div>
         <div class="col-12 col-md-6 mb-4">
           <img
-            src="https://e1.pxfuel.com/desktop-wallpaper/5/685/desktop-wallpaper-bloodhound-puppy-5-cool-bloodhound-puppy-computer.jpg"
+            src="https://i.postimg.cc/2y2rFq47/anime-wallpaper-7628310-1280.webp"
             class="img-fluid"
             alt=""
           />
@@ -115,5 +115,8 @@ export default {};
 
 label, h2{
   color: white;
+}
+.card{
+  background: grey
 }
 </style>

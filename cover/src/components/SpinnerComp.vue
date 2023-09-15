@@ -19,21 +19,9 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    margin-top: 5rem;
   }
   
-  /* Add CSS animations for rotation */
-  /*.loading-spinner img {
-    animation: spin 1s infinite linear;
-  }*/
-  
- /* @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  } */
   img{
     border-radius: 10rem;
   }

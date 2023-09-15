@@ -95,4 +95,8 @@ if (cart.length === 0) {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.card{
+  background:grey
+}
+</style>
