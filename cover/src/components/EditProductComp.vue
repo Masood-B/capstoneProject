@@ -37,7 +37,7 @@
             <input type="text" class="form-control" placeholder="" id="productPicture" v-model="productEdit.prodUrl" aria-label="Title" required>
           </div>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss>Save changes</button>
           </form>
         </div>
       </div>

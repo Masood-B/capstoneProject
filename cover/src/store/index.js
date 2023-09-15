@@ -186,6 +186,7 @@ export default createStore({
         );
         context.commit('setProducts', edit)
         context.dispatch('fetchProducts')
+        location.reload()
       } catch (e) {
         console.log(e);
       }
